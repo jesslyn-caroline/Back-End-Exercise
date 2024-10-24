@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Punny Web</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                text-align: center;
+            }
+            .email-input {
+                witdh: 500px;
+            }
+            .notification {
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <main class="d-flex flex-column justify-content-center align-items-center">
+            <h1>Punny Web</h1>
+            <p>Website akan segera dapat diakses pada 11/11/2024.
+                <br/>
+                Now : <span id="date-now"></span>
+            </p>
+            <input type="email" class="form-control email-input" id="email" placeholder="name@example.com">
+            <br/>
+            <button type="button" class="btn btn-primary notification" onClick="getNotification()">Get Notification</button>
+        </main>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        let dateNow = new Date();
+        document.getElementById("date-now").innerHTML = dateNow.toLocaleDateString();
+
+        function getNotification() {
+            let email = document.getElementById('email').value;
+            alert(`Notification will be send to ${email}`);
+        }
+    </script>
+</html>

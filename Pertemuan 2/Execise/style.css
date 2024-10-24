@@ -1,0 +1,68 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1440px;
+    max-height: 1024px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f7f7;
+    overflow: hidden;
+    position: relative;
+}
+
+.text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    line-height: 21px;
+    z-index: 1;
+}
+
+.text-container h1 {
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.grey-box {
+    width: 280px;
+    height:900px;
+    border-radius: 13px;
+    background-color: #cbcbcb;
+    transform-origin: top right;
+    transform: rotate(25deg);
+    position: absolute;
+    top: 0;
+    left: 15;
+}
+
+.jumlah-kata {
+    border: 1px solid grey;
+    border-radius: 5px;
+    color: grey;
+    padding: 8px 14px 8px 14px;
+}
+#song-lyrics {
+    line-height: 25px;
+}
+
+#song-title {
+    width: 175%;
+    background-color: #ececec;
+    border: 1px solid rgb(177, 177, 177);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}

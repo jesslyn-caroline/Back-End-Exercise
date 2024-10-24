@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+    <main class="container">
+        <div class="input-nilai">
+            <br><br>
+            <div><b>Nilai UTS : </b><input id="nilai-uts" /></div>
+            <div><b>Nilai Tugas : </b><input id="nilai-tugas" /></div>
+            <div><b>Nilai UAS : </b><input id="nilai-uas" /></div>
+        </div><button onClick="hitung()">Hitung</button>
+        <br>
+        <b>
+            Nilai Huruf : <span id="nilai-huruf"></span>
+        </b>
+    </main>
+</body>
+<script>
+    function hitung() {
+        let uts = parseInt(document.getElementById('nilai-uts').value);
+        let tugas = parseInt(document.getElementById('nilai-tugas').value);
+        let uas = parseInt(document.getElementById('nilai-uas').value);
+        let result = 0.3 * uts + 0.4 * tugas + 0.3 * uas;
+        let letter = "";
+        if (result < 40) letter = 'E';
+        else if (result < 60) letter = 'D';
+        else if (result < 70) letter = 'C';
+        else if (result < 80) letter = 'B';
+        else letter = 'A';
+        document.getElementById('nilai-huruf').innerHTML = letter;
+    }
+</script>
+
+</html>

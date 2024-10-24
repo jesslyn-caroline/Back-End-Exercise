@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <main class="container">
+        <div class="grey-box"></div>
+        <div class="text-container">
+            <h1>Punny Web</h1>
+            <h2 id="song-artist"></h2>
+            <p id="song-title"></p>
+            <p id="song-lyrics"></p>
+            <p class="jumlah-kata">Jumlah Kata : <span id="jumlah-kata"></span></p>
+        </div>
+
+    </main>
+</body>
+<script>
+    let lirik_lagu = {
+        status : true,
+        artist: "Westlife",
+        songTitle : "I Have A Dream",
+        songLyrics:"I have a dream, a song to sing\nTo help me cope with anything\nIf you see the wonder (wonder) of a fairy tale\nYou can take the future even if you fail!"
+    }
+    lirik_lagu.songLyrics = lirik_lagu.songLyrics.replaceAll("\n", "<br> ");
+    document.getElementById('song-artist').innerHTML = lirik_lagu.artist;
+    document.getElementById('song-title').innerHTML = lirik_lagu.songTitle;
+    document.getElementById('song-lyrics').innerHTML = lirik_lagu.songLyrics;
+    document.getElementById("jumlah-kata").innerHTML = lirik_lagu.songLyrics.split(" ").length;
+</script>
+
+</html>

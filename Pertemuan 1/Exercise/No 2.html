@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <main class="container">
+        <div class="input-nilai">
+            <div><b>Berat Badan : </b><input id="berat-badan" /></div>
+            <div><b>Tinggi Badan : </b><input id="tinggi-badan" /></div>
+
+        </div>
+        <br>
+        <button onClick="hitung()">Hitung</button>
+        <br>
+
+        <b>
+            BMI : <span id="bmi"></span><br />
+            Kategori : <span id="kategori"></span>
+        </b>
+    </main>
+</body>
+<script>
+    function hitung() {
+        let berat = parseFloat(document.getElementById('berat-badan').value);
+        let tinggi = parseFloat(document.getElementById('tinggi-badan').value);
+
+        let bmi = berat / (tinggi * tinggi);
+        document.getElementById('bmi').innerHTML = bmi;
+
+        let kategori = document.getElementById('kategori');
+        if (bmi < 15) kategori.innerHTML = "Berat badan sangat kurang";
+        else if (bmi < 18.5) kategori.innerHTML = "Berat badan kurang (underweight)";
+        else if (bmi < 24) kategori.innerHTML = "Normal";
+        else if (bmi < 30) kategori.innerHTML = "Kelebihan berat badan (overweight)";
+        else kategori.innerHTML = "Obesitas";
+
+    }
+</script>
+
+</html>
