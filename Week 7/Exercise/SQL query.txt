@@ -1,0 +1,35 @@
+CREATE DATABASE store_db;
+
+CREATE TABLE customers (
+	cust_id CHAR(2) PRIMARY KEY NOT NULL,
+    cust_name VARCHAR(20) NOT NULL,
+    cust_city VARCHAR(20) NOT NULL
+);
+
+INSERT INTO customers
+VALUES 
+('1', 'Andre', 'Bridgeport'),
+('2', 'Jones', 'San Diego'),
+('3', 'McKay', 'San Diego'),
+('4', 'Antonio', 'San Diego'),
+('5', 'Holton', 'Bridgeport');
+
+SELECT * FROM customers;
+
+SELECT * FROM customers WHERE cust_id = 1;
+
+CREATE TABLE products (
+	product_id CHAR(2) PRIMARY KEY NOT NULL,
+    product_name VARCHAR(20) NOT NULL,
+    product_price INT NOT NULL
+);
+
+INSERT INTO products
+VALUES 
+('1', 'Product 1', '10000'),
+('2', 'Product 2', '20000'),
+('3', 'Product 3', '30000'),
+('4', 'Product 4', '40000'),
+('5', 'Product 5', '50000');
+
+SELECT * FROM products;
