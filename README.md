@@ -1,3 +1,3 @@
 # Back-End-Exercise
 
-Back-End Web Development Assignment from University week-by-week from week 1 till week 16
+Back-End Web Development Assignment from University using Node JS with Express JS framework.
