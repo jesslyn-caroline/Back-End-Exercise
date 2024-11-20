@@ -1,0 +1,24 @@
+CREATE DATABASE crud_db;
+
+CREATE TABLE product (
+	product_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    product_name VARCHAR(200) NOT NULL,
+    product_price INT NOT NULL
+);
+
+CREATE TABLE comment (
+	comment_id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    cust_id INT(11) NOT NULL,
+    product_id INT(11) NOT NULL,
+    comment_text VARCHAR(255) NOT NULL,
+    comment_created DATETIME DEFAULT current_timestamp()
+);
+
+INSERT INTO comment (cust_id, product_id, comment_text)
+VALUES
+('1', '1', 'Barang telah diterima dengan baik'),
+('1', '2', 'Barang rusak'),
+('2', '3', 'Barang sangat direkomendasi'),
+('2', '4', 'Berfungsi dengan baik'),
+('1', '4', 'Tidak dapat digunakan'),
+('2', '5', 'Warna tidak sesuai pesanan');
