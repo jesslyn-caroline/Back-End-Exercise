@@ -1,0 +1,17 @@
+CREATE TABLE suppliers (
+	id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    company_name VARCHAR(255),
+    contact_name VARCHAR(255),
+    email VARCHAR(255),
+    phone VARCHAR(255),
+    active TINYINT(4),
+    createdAt DATETIME,
+    updatedAt DATETIME
+);
+
+INSERT INTO suppliers (company_name, contact_name, email, phone, active)
+VALUES
+('PT A', 'Person 1', 'contact@mail.com', '08111111111', 0),
+('PT B', 'Person 2', 'contact@mail.com', '08111111111', 0);
+
+SELECT * FROM suppliers
