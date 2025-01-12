@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="flex justify-center">
+        <container class="max-w-screen-2xl min-h-screen w-screen h-fit flex flex-col px-12 py-10 space-y-2.5">
+            <h1 class="text-3xl font-semibold">Add Product</h1>
+            <div class="w-full flex flex-col space-y-2">
+                <p class="font-semibold text-lg">Product Name</p>
+                <input type="text" id="name" class="h-12 w-full px-5 border rounded-md outline-none">
+            </div>
+            <div class="w-full flex flex-col space-y-2">
+                <p class="font-semibold text-lg">Product Price</p>
+                <input type="text" id="price" class="h-12 w-full px-5 border rounded-md outline-none">
+            </div>
+            <button onclick="add()" class="w-fit h-fit py-2 px-4 bg-teal-300 hover:bg-teal-400 text-lg text-white rounded-md">
+                Save
+            </button>
+        </container>
+    </body>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        function add() {
+            const name = document.getElementById('name').value;
+            const price = document.getElementById('price').value;
+            axios({
+                method: 'post',
+                url: '/admin/product/api/product',
+                data: {
+                    name: name,
+                    price: price
+                }
+            }).then((result) => {
+                alert(`Info Status: ${result.status}`);
+                window.location.href = '/admin/product';
+            }).catch((err) => {
+                alert(`Error: ${err.message}`);
+            });
+        }
+    </script>
+</html>

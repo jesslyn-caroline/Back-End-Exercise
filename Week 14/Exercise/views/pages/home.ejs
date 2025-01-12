@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="flex justify-center">
+        <container class="max-w-screen-2xl min-h-screen w-screen h-fit flex flex-col">
+            <nav class="w-full h-16 bg-sky-500 px-12 flex items-center justify-between">
+                <div class="flex flex-row space-x-3.5 items-center">
+                    <h1 class="text-2xl font-semibold text-white">Bunny ₍ᐢ. .ᐢ₎</h1>
+                    <% if (user) {%>
+                        <a href="/admin/product" class="text-lg text-white font-semibold underline">Product</a>
+                        <a href="/admin/supplier" class="text-lg text-white font-semibold underline">Supplier</a>
+
+                    <% } %>
+                </div>
+                <div class="space-x-2.5">
+                    <span><%= user.email %></span>
+                    <a href="<%= user? '/user/logout' : '/user/login' %>" class="w-fit h-fit py-2 px-4 bg-sky-100 hover:bg-sky-200 rounded-md">
+                        <%= user? 'Logout' : 'Login' %>
+                    </a>
+                </div>
+            </nav>
+            <main class="w-full h-full flex flex-row items-center px-12 py-12">
+                <div class="w-1/2 h-full flex justify-end items-center px-6">
+                    <img src="https://skala.or.id/wp-content/uploads/2024/01/dummy-post-square-1-1.jpg" alt="" class="w-96 h-96 object-cover">
+                </div>
+                <div class="w-5/12 h-full px-6 flex flex-col space-y-2.5">
+                    <h1 class="text-3xl font-semibold">Welcome Bunny Mania</h1>
+                    <p class="text-lg">Website ini didedikasikan untuk semua orang yang ingin belajar Pengembangan Web Back-End dan Bunny tersayang.</p>
+                    <p class="text-lg">Mari kita mulai!</p>
+                    <button class="w-fit h-fit py-2 px-4 text-white bg-teal-300 hover:bg-teal-400 rounded-md">Read more</button>
+                </div>
+            </main>
+        </container>
+    </body>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        
+    </script>
+</html>
